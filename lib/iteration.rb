@@ -13,14 +13,10 @@ def find_greater_pair(src)
   outer_results = []
   row_index = 0
   while row_index < src.count do
-    element_index = 0
-    inner_results = []
-    while element_index < src[row_index].count do
-      inner_results << src[row_index].max
-    end
-    outer_results << inner_results
-    outer_results
+    outer_results << src[row_index].max
+    row_index += 1
   end
+  outer_results
 end
 
 def total_even_pairs(src)
@@ -33,11 +29,15 @@ def total_even_pairs(src)
     element_index = 0
     
     while element_index < src[row_index].count do
-      if (src[row_index][element_index]%2 == 0 && src[row_index][element_index + 1]%2 == 0)
-        total = total + src[row_index][element_index] + src[row_index][element_index + 1]
+      if (src[row_index][0] % 2 == 0) && (src[row_index][1] % 2 == 0)
+        total = total + src[row_index][0] + src[row_index][1]
       end
+      element_index += 2
     end
+  row_index += 1
   end
+  
+  total
 end
 
 
