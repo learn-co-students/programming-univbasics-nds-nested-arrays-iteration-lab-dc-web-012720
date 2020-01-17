@@ -1,4 +1,16 @@
-# Nested Data Structures: Printing and Coalescing Data
+def total_even_pairs(src)
+  total = 0
+  row_index = 0
+  first = 0
+  second = 1
+  while row_index < src.count do
+    if ((src[row_index][first] + src[row_index][second])%2) == 0
+      total += (src[row_index][first] + src[row_index][second])
+    end
+    row_index += 1
+  end
+  return total
+end# Nested Data Structures: Printing and Coalescing Data
 
 ## Learning Goals
 
